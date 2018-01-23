@@ -1,6 +1,12 @@
 # basic-nodejs-app-setup
 Basic NodeJS app setup.
 
+# API endpoints
+``` text
+health
+ GET     ./health
+```
+
 # Development
 
 ## Environment Variables
