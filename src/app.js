@@ -2,7 +2,13 @@
 
 const bodyParser = require('body-parser')
 const express = require('express')
+const session = require('express-session')
+const RedisStore = require('connect-redis')(session)
 const morgan = require('morgan')
+
+const config = require('./config/config')
+
+const models = require('./models')
 
 const healthApi = require('./routes/health/health.api')
 
@@ -20,6 +26,17 @@ app.use(morgan('dev'))
  */
 app.use(bodyParser.urlencoded({ limit: '5mb', extended: false }))
 app.use(bodyParser.json({ limit: '5mb' }))
+
+/**
+ * @description Middleware - session.
+ */
+app.use(session({
+  key: config.COOKIE.KEY,
+  store: new RedisStore({ client: models.redis }),
+  secret: config.COOKIE.SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
 
 /**
  * @description Add health API (NO authorization, NO api prefix).

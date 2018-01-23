@@ -15,10 +15,14 @@ Required Environment Variables.
 
 | Variable name                | Description                |
 |------------------------------|----------------------------|
-| `TBA`                        | TBA                          |
+| `COOKIE_KEY`                 | Cookie key                 |
+| `COOKIE_SECRET`              | Cookie secret              |
+| `REDIS_PORT`                 | Redis port                 |
+| `REDIS_HOST`                 | Redis host                 |
 
 Optional Environment Variables.
 
 | Variable name                | Description                | Default           |
 |------------------------------|----------------------------|-------------------|
 | `PORT`                       | Port                       | 3050              |
+| `REDIS_PASS`                 | Redis password             |                   |
