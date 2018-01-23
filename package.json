@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "body-parser": "~1.18.2",
-    "express": "~4.16.2"
+    "express": "~4.16.2",
+    "morgan": "~1.9.0"
   },
   "devDependencies": {
     "fixpack": "~2.3.1"
