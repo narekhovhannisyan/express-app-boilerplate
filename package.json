@@ -45,6 +45,7 @@
   },
   "scripts": {
     "fix-package": "fixpack",
+    "lint": "./node_modules/.bin/eslint ./src --fix",
     "start": "node ./src/bin/www"
   }
 }
