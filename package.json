@@ -1,0 +1,43 @@
+{
+  "name": "basic-nodejs-app-setup",
+  "description": "Basic NodeJS App Setup",
+  "version": "1.0.0",
+  "author": "Narek Hovhannisyan",
+  "bugs": {
+    "url": "https://github.com/narekhovhannisyan/basic-nodejs-app-setup/issues"
+  },
+  "contributors": [
+    {
+      "name": "Narek Hovhannisyan",
+      "email": "narekgilmour@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "express": "~4.16.2"
+  },
+  "devDependencies": {
+    "fixpack": "~2.3.1"
+  },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "homepage": "https://github.com/narekhovhannisyan/basic-nodejs-app-setup#readme",
+  "keywords": [
+    "Basic",
+    "nodejs",
+    "app",
+    "setup"
+  ],
+  "main": "src/bin/www",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/narekhovhannisyan/basic-nodejs-app-setup"
+  },
+  "scripts": {
+    "fix-package": "fixpack",
+    "start": "node ./src/bin/www"
+  }
+}
