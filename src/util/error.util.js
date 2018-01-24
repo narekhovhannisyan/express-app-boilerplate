@@ -1,5 +1,12 @@
 'use strict'
 
+class PathNotFoundError extends Error {
+  constructor (msg) {
+    super(msg)
+    this.name = this.constructor.name
+  }
+}
+
 class ProcessEnvVariableError extends Error {
   constructor (msg) {
     super(msg)
@@ -8,5 +15,6 @@ class ProcessEnvVariableError extends Error {
 }
 
 module.exports = {
+  PathNotFoundError,
   ProcessEnvVariableError
 }
