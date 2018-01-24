@@ -2,7 +2,15 @@
 
 const http = require('http')
 
+const processVariablesChecker = require('../config/process-variables-checker')
+
 const app = require('../app')
+
+/**
+ * @description Check for environment variables for `production` mode to be specified.
+ *  Throws error if doesn't.
+ */
+processVariablesChecker.check()
 
 /**
  * @private
