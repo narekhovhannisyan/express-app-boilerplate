@@ -28,6 +28,7 @@
     "eslint-plugin-node": "~5.2.1",
     "eslint-plugin-promise": "~3.6.0",
     "eslint-plugin-standard": "~3.0.1",
+    "jest": "~22.1.4",
     "fixpack": "~2.3.1"
   },
   "engines": {
@@ -50,6 +51,7 @@
   "scripts": {
     "fix-package": "fixpack",
     "lint": "./node_modules/.bin/eslint ./src --fix",
-    "start": "node ./src/bin/www"
+    "start": "node ./src/bin/www",
+    "test": "jest"
   }
 }
