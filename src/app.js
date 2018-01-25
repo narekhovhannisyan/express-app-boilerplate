@@ -13,6 +13,7 @@ const models = require('./models')
 const { PathNotFoundError } = require('./util').Errors
 
 const healthApi = require('./routes/health/health.api')
+const api = require('./routes')
 
 const app = express()
 
@@ -44,6 +45,11 @@ app.use(session({
  * @description Add health API (NO authorization, NO api prefix).
  */
 app.use('/health', healthApi)
+
+/**
+ * @description Initialize APIs.
+ */
+app.use('/api/v1', api)
 
 /**
  * @description Middleware - catch 404 and forward to error handler.
