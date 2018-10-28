@@ -1,5 +1,4 @@
-# Contributing to renderforest-api
-
+# Contributing to basic-nodejs-appsetup
 ## Code Contributions
 
 #### Step 1: Clone
