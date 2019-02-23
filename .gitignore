@@ -61,5 +61,14 @@ typings/
 # next.js build output
 .next
 
-#IDE
+# IDE
 .idea/
+.vscode/
+
+# Build files.
+dist/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
