@@ -1,28 +1,15 @@
-# basic-nodejs-app-setup
-Basic NodeJS app setup.
+# express-app-boilerplate
 
-# API endpoints
-``` text
-health
- GET     ./health
-```
+<!---your build status/ci svg here--->
 
-# Development
+Express application boilerplate.
 
-## Environment Variables
+ # Table of Contents
 
-Required Environment Variables.
-
-| Variable name                | Description                |
-|------------------------------|----------------------------|
-| `COOKIE_KEY`                 | Cookie key                 |
-| `COOKIE_SECRET`              | Cookie secret              |
-| `REDIS_PORT`                 | Redis port                 |
-| `REDIS_HOST`                 | Redis host                 |
-
-Optional Environment Variables.
-
-| Variable name                | Description                | Default           |
-|------------------------------|----------------------------|-------------------|
-| `PORT`                       | Port                       | 3050              |
-| `REDIS_PASS`                 | Redis password             |                   |
+* [API Endpoints](doc/API_ENDPOINTS.md)
+* [DB Schemas](doc/DB_SCHEMAS.md)
+* [Development](doc/DEVELOPMENT.md)
+  * [Environment Variables](doc/DEVELOPMENT.md#environment-variables)
+* [Install](doc/INSTALL.md)
+* [Test](doc/TEST.md)
+  * [Test Scripts](doc/TEST.md#test-scripts)
