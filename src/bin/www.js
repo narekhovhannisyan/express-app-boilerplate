@@ -1,31 +1,25 @@
-'use strict'
-
 const http = require('http')
-
-const processVariablesChecker = require('../config/process-variables-checker')
 
 const app = require('../app')
 
-/**
- * @description Check for environment variables for `production` mode to be specified.
- *  Throws error if doesn't.
- */
-processVariablesChecker.check()
+const ProcessVariablesChecker = require('../util/process-variables-checker')
+
+const { PORT } = require('../config')
+
+ProcessVariablesChecker()
 
 /**
- * @private
- * @param val
- * @returns {*}
- * @description Normalize a port into a number, string, or false.
+ * Normalize a port into a number, string, false.
+ * @param {any} value
  */
-function _normalizePort (val) {
-  const port = parseInt(val, 10)
+const normalizePort = (value) => {
+  const port = parseInt(value, 10)
 
-  if (isNaN(port)) { // named pipe
-    return val
+  if (isNaN(port)) {
+    return value
   }
 
-  if (port >= 0) { // port number
+  if (port >= 0) {
     return port
   }
 
@@ -33,22 +27,18 @@ function _normalizePort (val) {
 }
 
 /**
- * @description Get port from environment and store in Express.
+ * Gets port from environment and storest in Express.
  */
-const port = _normalizePort(process.env.PORT || '3050')
+const port = normalizePort(PORT)
 app.set('port', port)
 
-/**
- * @description Create HTTP server.
- */
 const server = http.createServer(app)
 
 /**
- * @private
+ * Event listener for HTTP server `error` event.
  * @param error
- * @description Event listener for HTTP server "error" event.
  */
-function _onError (error) {
+const onError = (error) => {
   if (error.syscall !== 'listen') {
     throw error
   }
@@ -57,13 +47,12 @@ function _onError (error) {
     ? `Pipe ${port}`
     : `Port ${port}`
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(`${bind} requires elevated privileges`)
+      console.error(`${bind} requires elevated privileges.`)
       process.exit(1)
     case 'EADDRINUSE':
-      console.error(`${bind} is already in use`)
+      console.error(`${bind} is already in use.`)
       process.exit(1)
     default:
       throw error
@@ -71,20 +60,16 @@ function _onError (error) {
 }
 
 /**
- * @private
- * @description Event listener for HTTP server "listening" event.
+ * Event listener for HTTP server `listening` event.
  */
-function _onListening () {
+const onListening = () => {
   const address = server.address()
   const bind = typeof address === 'string'
     ? `pipe ${address}`
     : `port ${address.port}`
-  console.log('\n', `Listening on: ${bind}`, '\n')
+  console.log('\n', `Listening on:${bind}`, '\n')
 }
 
-/**
- * @description Listen.
- */
 server.listen(port)
-server.on('error', _onError)
-server.on('listening', _onListening)
+server.on('error', onError)
+server.on('listening', onListening)
