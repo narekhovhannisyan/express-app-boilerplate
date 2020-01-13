@@ -1,13 +1,14 @@
-# Contributing to basic-nodejs-appsetup
+# Contributing to express-app-boilerplate
+
 ## Code Contributions
 
 #### Step 1: Clone
 
-Clone the project on [GitHub](https://github.com/narekhovhannisyan/basic-nodejs-app-setup.git)
+Clone the project on [GitHub](https://github.com/narekhovhannisyan/express-app-boilerplate.git)
    
    ``` bash
-   $ git clone https://github.com/narekhovhannisyan/basic-nodejs-app-setup.git
-   $ cd basic-nodejs-app-setup
+   $ git clone https://github.com/narekhovhannisyan/express-app-boilerplate.git
+   $ cd express-app-boilerplate
    ```
    
 For developing new features and bug fixes, the development branch should be pulled and built upon.
