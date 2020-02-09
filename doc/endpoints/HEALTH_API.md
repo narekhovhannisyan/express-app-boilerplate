@@ -1,4 +1,4 @@
-# Analytics Endpoints
+# Health Endpoints
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ Authorization is not required.
 
 ##### Notes
 
-Health API for structure and testing purposes.
+Init Health API for providing application structure. And it can be used for testing purposes.
 
 ---
 
