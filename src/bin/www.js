@@ -2,10 +2,12 @@ const http = require('http')
 
 const app = require('../app')
 
-const ProcessVariablesChecker = require('../util/process-variables-checker')
-
+const ProcessVariablesChecker = require('../util/process-variables-checker.util')
 const { PORT } = require('../config')
 
+/**
+ * Check if all process environment variables are present for production mode.
+ */
 ProcessVariablesChecker()
 
 /**

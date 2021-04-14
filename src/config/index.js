@@ -1,6 +1,6 @@
 const CONFIG = {
   MODE: process.env.MODE || 'development',
-  PORT: process.env.PORT || 3010,
+  PORT: parseInt(process.env.PORT) || 3010,
   VALIDATIONS: {
     DB_INTEGER_MAX_VALUE: 21474836,
     DEFAULT_OPTIONS: {
