@@ -18,7 +18,7 @@ const ERRORS = CUSTOM_ERRORS.reduce((acc, className) => {
     [className]: class extends Error {
       constructor (message) {
         super(message)
-        this.name = this.constructor['name']
+        this.name = this.constructor.name
       }
     }
   }
@@ -27,4 +27,3 @@ const ERRORS = CUSTOM_ERRORS.reduce((acc, className) => {
 }, {})
 
 module.exports = ERRORS
-
